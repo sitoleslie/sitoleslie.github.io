@@ -35,6 +35,13 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+// o: object with the key/value pairs id, nameFist, nameLast
+const obj = {
+ id: id,
+ nameFirst : nameFirst, 
+ nameLast : nameLast 
+};
+return obj; 
 
 } 
 
@@ -43,18 +50,62 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+     // use an array to hold the contacts. 
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
-    }
+        },
+        // implement a function that will push the obj contacts in the array 
+        addContact: function(obj){
+            contacts.push(obj);
+        },
+        // i: string
+        // o: object 
+        // implement a function that will search for a string in the contact list 
+       findContact: function(str){
+           // implement a loop to iterate through the contact list 
+           for(let i = 0; i < contacts.length; i++) 
+           // check if the contact has the same first and last name 
+            if(contacts[i].nameFirst + " " + contacts[i].nameLast === str)  
+            // return that contact object
+            return contacts[i]; 
+       },
+       removeContact: function(contactObj)
+       {
+           // implement a for loop to iterate through the contact array 
+           for(let i = 0; i < contacts.length; i++){
+               // create a variable and assign it the contact's index
+                var current = contacts[i];
+                // check to see if the contactObj and contact has the same id 
+            if (contactObj.id == contacts[i].id){
+                // if so, remove the contact's value
+               contacts.splice(i,1);  
+            }
+           }
+       },
+       // i: no input here is needed 
+       printAllContactNames: function(){
+           // o: a string, so create a container to hold the values 
+             var fullName = "";
+             // iterate through the contact list 
+            for(var i =0; i < contacts.length; i++){
+              // reassign and add the first and last name into the empty str container 
+              // c: needs a new line-break
+                fullName += contacts[i].nameFirst + " " +contacts[i].nameLast +"\n";
+            }
+               //console.log(contactNames);
+                 return fullName.slice(0,fullName.length-1);        
+          
+       }
+       
+    };
 }
 
 
-
+//  *          new-line character added after it!
 
 // YOUR CODE GOES ABOVE HERE //
 
