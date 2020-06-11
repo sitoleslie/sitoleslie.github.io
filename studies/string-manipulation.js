@@ -76,8 +76,4 @@ console.log(replacement);
  console.log(sliceItOff.slice(0,3)); // => 'ice'
  console.log(sliceItOff.slice(0)); // => 'icebaby'
  
- // 8. reassining with operators: += -= *= /= %/ //
- var school = 'home';
-school += 'work';
-console.log(school); // => 'homework'
-// At the same time on one line, the variable is reassigned and concated
+ 

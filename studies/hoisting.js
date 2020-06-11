@@ -1,9 +1,14 @@
 /*
 * Hoisting 
 *
-* 0. Variables declaration are hoisted to the top of their scope, not the assignment. 
+* 0. The JavaScript interpreter will go through the code after excution. 
+* First, it will run the code and check for minor errors like syntax. If the code checks out then it will enhance the code to run effectively. Lastly, hositing will happen known as the compile run.
+* The JS interpreter will hoist (move) the variables and function declation to the current scope's top. 
+* 
 *
-* 1. Function declrations are hoisted to the top, unlike function expressions. 
+* 1. Variables declaration are hoisted to the top of their scope, not the assignment. 
+*
+* 2. Function declrations are hoisted to the top, unlike function expressions. 
 *
 */
 

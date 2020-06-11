@@ -46,3 +46,20 @@ function sub(number){
 console.log(sub(1)); 
 // prints => 1 
 
+/*
+* Closures
+*
+* 0. A closure is a function that has access of the parent scope's variable even after it is returned.
+*
+* 1. Not all function are closures and only functions can create closures.
+*
+*/
+
+var petName = 'Dulce'
+
+function closure(){
+     console.log(petName);
+ }
+ closure(); 
+ // prints => "Dulce"
+ //the function acceessed the global variable and used it inside the function

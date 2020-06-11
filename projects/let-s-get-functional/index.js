@@ -3,7 +3,7 @@
 'use strict';
 
 var customers = require('./data/customers.json');
-var _ = require(/* Replace this with the name of your lodown! */);
+var _ = require('lodown-sitoleslie');
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -16,16 +16,57 @@ var _ = require(/* Replace this with the name of your lodown! */);
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./<YOUR_GITHUB_FOLDER/projects/let-s-get-functional
- *
+ *    npm start --prefix ./sitoleslie.github.io/projects/let-s-get-functional
+ * // start from environment 
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
 
 var maleCount = function(array) {
+// I: array 
+// O: number
+// C: use filer 
+
+// invoke filter function using array as my first argument
+
+return _.filter(array, (customerObj) => {
+    // filter out of all male customers
+   customerObj.gender === 'male'; 
+}).length;
 
 };
 
-var femaleCount;
+
+var femaleCount = function(array){
+    
+  return _.reduce(array, (counter, customerObj) => {
+      // I: customer array
+      // O: number of female customers
+      // C: must use reduce
+      // we need a seed bc data type of the first element in array is not datatype of output value
+      
+      
+      // check to see if the array has females 
+      if(array.gender === 'female'){
+          // reassign and add to the acc
+          
+          counter += 1; 
+         
+      }
+      // returnn
+      
+      return counter;
+     
+  }, 0);
+    
+    
+    
+};
+
+
+
+
+
+
 
 var oldestCustomer;
 

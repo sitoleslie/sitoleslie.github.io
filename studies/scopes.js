@@ -10,13 +10,21 @@
 *
 * 3. Glabal, local, and block are the three types of scopes.
 *
-* 4. Global scope : Accessed anywhere but inside the function or block.
-*
-* 5.Local scope: written and stuck inside that function, can't be used outside of the function.
-*
-* 6. Block scope: This is written inside loops, if, and switch statements. The variable is only exist in that block scope by using const ot let keyword.
+* 4. Global scope : 
+* Var can be reassigned and is bounded to the global and local scope.
+* It can be declare in any scope but is function scoped.
 * 
+* 5.Local scope: written and stuck inside that function, can't be used outside of the function.
+* Let and const are local scoped. 
+*
+* 6. Block scope: This is written inside loops, if, and switch statements. The variable  only exist in that block scope by using const ot let keyword.
+* While let can reassigned and not const.
+*
 * 7. Parameters are function scoped.
+*
+* 8. If there is a variable in the global scope and a parameter with the same name,
+* and you are within the function body you will access the global scope's variavles because making a variable for that function is only exlucive to that function.
+* If you were in the global scope, you will have access to the global scope variable because it is bounded to that scope and ond can only be accessed in that parent scope.
 */ 
 
 // 1. Scope //
@@ -32,20 +40,13 @@ console.log(oldScope);
 // because var oldScope could not be accessed inside newScope function
 
 
-/*
-* Closures
-*
-* 0. A closure is a function that has access of the parent scope's variable even after it is returned.
-*
-* 1. Not all function are closures and only functions can create closures.
-*
-*/
+// 2. example of global scope and parameter with the same name //
 
-var petName = 'Dulce'
+var x = 1;
+function example(x){
+    return x;
+}
 
-function closure(){
-     console.log(petName);
- }
- closure(); 
- // prints => "Dulce"
- //the function acceessed the global variable and used it inside the function
+example(2);
+// returns => 2 
+// because making a variable for a function that has x will return 2 since it is only exclusive to that function

@@ -112,7 +112,6 @@ var times = 'number' * 2;
 * 1. Hold or collect any data type values. 
 *
 * 2. Arrays have different methods: 
-*.length to find the length of the array 
 * push - add elements to the back 
 * unshift -  are used to add elements to the beginning
 * shift - remove elements from the beginning 
@@ -154,10 +153,6 @@ console.log(arr[0]);
 
 console.log(arr[arr.length-1]);
 // prints => true because it is access the last element at the last index
-
-// 4. Length //
-console.log(arr.length);
-// prints => 2 because there is only 2 elements in the array
 
 // 5. changing an element in the array //
 arr[0] = 2;
