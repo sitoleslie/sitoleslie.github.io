@@ -2,7 +2,25 @@
 // min /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function min() {
+function min(num1, num2) {
+// i: two numbers 
+
+// o: returns the minimum 
+
+// containts: use math.min 
+
+if(num1 > num2){
+for(let i = num2; i <= num1; i--){
+ return Math.min(i);
+} 
+} else if (num1 < num2){
+  for(let i = num1; i <= num2; i++){
+    return Math.min(i);
+  }
+} else {
+  return Math.min(num1);
+}
+
 
 }
 
@@ -10,15 +28,47 @@ function min() {
 // isEven //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function isEven() {
+function isEven(number) {
+// i: number
+// base case: 
 
+// check if it is even
+if(number % 2 === 0){
+  return true; 
+// check if it is odd 
+}else if (number % 2 !== 0){
+  return false; 
+}
+
+//o: boolean 
+
+// recurive call: 
+return isEven(number - 2);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
+
+function countChars(str, letter) {
+ // input: str 
+// split it into an array
+str = str.split('');
+
+// use reduce 
+// acc is 0 
+// currV will be each element 
+return str.reduce((acc, currV) => {
+  // check if each element has the letter 
+  if(currV === letter){
+    // add to the acc
+    acc++
+  }
+  // return 
+  return acc;
+}, 0);
+
 
 }
 
@@ -26,10 +76,30 @@ function countChars() {
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
+// find how many upperCase B's are in the string 
+function countBs(str) {
+
+// input: str 
+// split it into an array
+str = str.split('');
+
+// use reduce 
+// acc is 0 
+// currV will be each element 
+return str.reduce((acc, currV) => {
+  // check if each element has upperCase B 
+  if(currV === 'B'){
+    // add to the acc
+    acc++
+  }
+  // return 
+  return acc;
+}, 0);
+
 
 }
 
+ 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

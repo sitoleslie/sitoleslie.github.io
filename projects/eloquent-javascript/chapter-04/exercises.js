@@ -2,15 +2,43 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
+function range(start, end, step = start < end ? 1 : -1) {
+  const arr = [];
+
+// check if step is greather than zero
+  if (step > 0) {
+    // push in the range into the array 
+    for (let i = start; i <= end; i += step) arr.push(i);
+    // if start is the same as end
+    // just return the arr
+  } else if (start === end){ 
+    return arr;
+  }
+  else {
+    // otherwise, return the array counting down
+    for (let i = start; i >= end; i += step) arr.push(i);
+  }
+  return arr;
 
 }
-
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum() {
+function sum(array) {
+
+
+// I: an array of numbers
+return array.reduce((sum, element) => {
+// reassign the seed to each iteration 
+sum += element; 
+return sum;
+}, 0);
+
+// returns the sum 
+
+
+
 
 }
 
@@ -18,7 +46,15 @@ function sum() {
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArray() {
+function reverseArray(array) {
+// input: an array 
+if(!array.length){
+  return [];
+}
+
+
+//o: an array reverse 
+return reverseArray(array.slice(1)).concat([array[0]]);
 
 }
 
@@ -26,7 +62,21 @@ function reverseArray() {
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
+function reverseArrayInPlace(array) {
+  // input: an array 
+  
+  var i = 0,
+      n = array.length,
+      // using math.floor to round down
+      middle = Math.floor(n / 2),
+      swap = null;
+// iterate over half the array 
+  for (; i < middle; i += 1) {
+    // swap the elements using the swap var above
+     swap = array[i];
+     array[i] = array[n - 1 - i];
+     array[n - 1 - i] = swap;
+  }
 
 }
 
