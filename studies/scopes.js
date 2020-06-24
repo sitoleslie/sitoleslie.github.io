@@ -23,8 +23,7 @@
 * 7. Parameters are function scoped.
 *
 * 8. If there is a variable in the global scope and a parameter with the same name,
-* and you are within the function body you will access the global scope's variavles because making a variable for that function is only exlucive to that function.
-* If you were in the global scope, you will have access to the global scope variable because it is bounded to that scope and ond can only be accessed in that parent scope.
+* and inside of the function body, it will access the parameter's name. It will not look outside of the scope.
 */ 
 
 // 1. Scope //
