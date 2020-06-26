@@ -2,23 +2,52 @@
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function flatten() {
+const array1 = [[1,2,3], [4,5], [6]];
+
+function flatten(arr) {
+
+// i: an array with arrays 
+ return arr.reduce((acc, val) => acc.concat(val), []);
+// o: one array 
+
+
+// c: use reduce 
+
 
 }
+
+flatten(array1);
 
 // /////////////////////////////////////////////////////////////////////////////
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function loop() {
+function loop(value, testFun, updateFun, bodyFun) {
+  // iterate 
+  // call the testFun
+  // the vaule will be updated at every iteration
+ for (let i = value; testFun(value); value = updateFun(value)) {
+   // call for the bodyFun(value)
+    bodyFun(value);
+
+
 
 }
-
+}
 // /////////////////////////////////////////////////////////////////////////////
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function every() {
+const array2 = [1, true, '']
+
+function every(array, test) {
+
+//iterate 
+for (let elements of array)
+// check if the functions elements are false 
+if (!test(elements)) return false;
+// return true otherwise
+return true;
 
 }
 
@@ -26,9 +55,34 @@ function every() {
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function dominantDirection() {
 
+
+function dominantDirection(text){
+  
+  
+ // iterate 
+ let counted = countBy(text, char => {
+    let script = characterScript(char.codePointAt(0));
+    // return none when it is filtered out 
+    return script ? script.direction : "none";
+    // filter out the object who has a property of none 
+  }).filter(({name}) => name != "none");
+  
+  
+  
+//this would mean that characterScript output false or null for all characters, 
+  if (counted.length == 0) return "ltr";
+// using the reduce method to get the name of the returned array
+  return counted.reduce((a, b) => a.count > b.count ? a : b).name
+  
+  
+  
+  
+  
+  
+  
 }
+
 
 // /////////////////////////////////////////////////////////////////////////////
 //  //////////////////////////////////////////////////////
